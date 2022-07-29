@@ -1,0 +1,85 @@
+.containerLoader{
+  height: 500px;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transform: scale(2);
+  border-radius: 50%;
+  border: 1px solid;
+  width: 30px;
+  height: 30px;
+  color: black;
+}
+
+.loader::after {
+  position: absolute;
+  width: 0px;
+  height: 10px;
+  display: block;
+  border-left: 1px solid black;
+  content: '';
+  left: 14px;
+  border-radius: 1px;
+  top: 4px;
+  animation-duration: 1s;
+}
+
+.loader::before {
+  position: absolute;
+  width: 0px;
+  height: 10px;
+  display: block;
+  border-left: 1px solid black;
+  content: '';
+  left: 14px;
+  border-radius: 1px;
+  top: 4px;
+  animation-duration: 40s;
+}
+
+.loader::before,.loader::after {
+  transform-origin: bottom;
+  animation-name: dial;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes dial {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonBack {
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background:transparent;
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+   } 
+   
+   .buttonBack:hover {
+    transform: translateX(-4px);
+    background-color: transparent;
+    color: black;
+   }

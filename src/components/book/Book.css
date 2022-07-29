@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Questrial&display=swap");
+
+.card {
+  border: none;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bodyCard {
+  padding: 15px;
+}
+
+.titleCard {
+  padding: 0 0 5px;
+  font-size: 15px;
+  font-family: "Questrial", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.textPrice {
+  font-size: 17px;
+  font-family: "Questrial", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.imgCard {
+  width: 216px;
+  height: 291px;
+  transition: all ease 0.8s;
+  cursor: pointer;
+}
+
+.imgCard:hover {
+  transform: scale(1.1);
+}

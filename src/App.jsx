@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NavBar from "./components/navBar/NavBar";
 import Home from "./components/home/Home";
 import "./App.css";
-import NavBar from "./components/navBar/NavBar";
+import BookCollectionContainer from "./container/bookCollectionContainer/BookCollectionContainer";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/tienda"></Route>
+            <Route path="/libros" element={<BookCollectionContainer />}></Route>
+            <Route path="/carrito"></Route>
           </Routes>
         </div>
       </BrowserRouter>

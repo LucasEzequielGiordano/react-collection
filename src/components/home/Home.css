@@ -62,7 +62,7 @@
 }
 
 .item4 {
-  background-image: url("https://jackmoreno.files.wordpress.com/2019/06/el-instituto-de-stephen-king.jpg?w=625");
+  background-image: url("https://th.bing.com/th/id/R.81efefe8d106cc00b038053febd3946e?rik=0GKBo1FG39Fr0Q&pid=ImgRaw&r=0");
   grid-column: 5/6;
   grid-row: 1/2;
 }
@@ -80,7 +80,7 @@
 }
 
 .item7 {
-  background-image: url("https://th.bing.com/th/id/R.81efefe8d106cc00b038053febd3946e?rik=0GKBo1FG39Fr0Q&pid=ImgRaw&r=0");
+  background-image: url("https://jackmoreno.files.wordpress.com/2019/06/el-instituto-de-stephen-king.jpg?w=625");
   grid-column: 3/5;
   grid-row: 2/3;
 }

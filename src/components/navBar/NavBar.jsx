@@ -33,7 +33,7 @@ const NavBar = () => {
             <li>
               <Link to={`/libros/10`}>2010 - 2019</Link>
             </li>
-            <Link to={`/cart`}>
+            <Link to={`/carrito`}>
               <CartIcon />
             </Link>
           </ul>

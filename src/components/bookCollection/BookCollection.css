@@ -1,0 +1,14 @@
+.containerAllCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: space-evenly;
+  margin: 0;
+  display: grid;
+  margin-top: 10px;
+}
+
+.containerCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
