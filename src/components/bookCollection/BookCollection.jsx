@@ -1,11 +1,10 @@
-// import Book from "../book/book";
 import Book from "../book/Book";
 import "./BookCollection.css";
 
 function BookCollection({ books }) {
   return (
-      <div className="containerAllCards">
-      {books.map((book) => 
+    <div className="containerAllCards">
+      {books.map((book) => (
         <div className="containerCard" key={book.id}>
           <Book
             name={book.name}
@@ -16,7 +15,7 @@ function BookCollection({ books }) {
             price={book.price}
           />
         </div>
-      )}
+      ))}
     </div>
   );
 }
