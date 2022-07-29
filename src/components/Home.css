@@ -1,0 +1,92 @@
+.containerCollection {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.btnHome {
+  z-index: 101;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 50px 80px;
+  text-decoration: none;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.526);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 6px 6px 12px #fd3939be, inset -6px -6px 12px #fd3939be;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  font-family: "Questrial", sans-serif;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transition: ease-in-out 0.5s;
+}
+
+.btnHome:hover {
+  color: black;
+  box-shadow: inset 500px 0 0 0 #fd3939be;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.item {
+  background-size: cover;
+}
+
+.item1 {
+  background-image: url("https://3.bp.blogspot.com/-bzchoi1Il9U/UIgPKVBhkAI/AAAAAAAACMM/u5IzGMUmUuE/w426-h640/33b48465874a3aae5ce6692af3325983.jpg");
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.item2 {
+  background-image: url("https://th.bing.com/th/id/R.ab22a1ef4c4da04a310c8fbcfd959220?rik=ElIoWE7qYT%2bNDQ&pid=ImgRaw&r=0");
+  grid-column: 2/4;
+  grid-row: 1/2;
+}
+
+.item3 {
+  background-image: url("https://i.pinimg.com/originals/73/86/e3/7386e3447b63d86e47fe24c264f1b410.jpg");
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+
+.item4 {
+  background-image: url("https://jackmoreno.files.wordpress.com/2019/06/el-instituto-de-stephen-king.jpg?w=625");
+  grid-column: 5/6;
+  grid-row: 1/2;
+}
+
+.item5 {
+  background-image: url("https://th.bing.com/th/id/R.35de1ef360a6e12f9c7e66db5c7068a4?rik=7S6KLqXy6O29hg&pid=ImgRaw&r=0");
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.item6 {
+  background-image: url("https://www.epubgratis.vip/wp-content/uploads/2015/03/Maleficio-Stephen-King-portada.jpg");
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.item7 {
+  background-image: url("https://th.bing.com/th/id/R.81efefe8d106cc00b038053febd3946e?rik=0GKBo1FG39Fr0Q&pid=ImgRaw&r=0");
+  grid-column: 3/5;
+  grid-row: 2/3;
+}
+
+.item8 {
+  background-image: url("https://th.bing.com/th/id/OIP.-xqsVCByMi_VKEFQsFzptgHaLQ?pid=ImgDet&rs=1");
+  grid-column: 5/6;
+  grid-row: 2/3;
+}
