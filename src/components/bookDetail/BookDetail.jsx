@@ -26,21 +26,12 @@ console.log(books.stock)
   return (
     <div className="cardDetail">
       <div className="cardImg">
-        <img className=" w-100" src={books.img} alt="First slide" />
+        <img className=" w" src={books.img} alt="First slide" />
       </div>
       <div className="container-fluid">
         <div className="wrapper row">
           <div className="details col-md-12">
             <h3 className="product-title">{books.name}</h3>
-            <div className="rating">
-              <div className="stars">
-                <span className="fa fa-star checked"></span>
-                <span className="fa fa-star checked"></span>
-                <span className="fa fa-star checked"></span>
-                <span className="fa fa-star"></span>
-                <span className="fa fa-star"></span>
-              </div>
-            </div>
             <p className="product-description">{books.description}</p>
             <h4 className="price">
               Precio: <span>${books.price}</span>

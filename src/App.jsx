@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./components/navBar/NavBar";
 import Home from "./components/home/Home";
-import "./App.css";
 import BookCollectionContainer from "./container/bookCollectionContainer/BookCollectionContainer";
 import BookDetailContainer from "./container/bookDetailContainer/BookDetailContainer";
 import CartContextProvider from "./hooks/Context";
+import "./App.css";
+import Cart from "./components/cart/Cart";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
               path="/detalle/:id"
               element={<BookDetailContainer />}
             ></Route>
-            <Route path="/carrito"></Route>
+            <Route path="/carrito" element={<Cart/>}></Route>
           </Routes>
         </div>
       </BrowserRouter>
