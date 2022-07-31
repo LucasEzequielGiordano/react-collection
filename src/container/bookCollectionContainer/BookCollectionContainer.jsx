@@ -2,15 +2,15 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import BookCollection from "../../components/bookCollection/BookCollection";
-import { getCollection } from "../../helpers/Collection";
+// import { getCollection } from "../../helpers/Collection";
 // import { collection } from "../../helpers/Collection"
-// import {
-//   getFirestore,
-//   collection,
-//   getDocs,
-//   query,
-//   where,
-// } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 // import BookCollection from "../../components/bookCollection/BookCollection";
 
@@ -20,34 +20,34 @@ function BookCollectionContainer() {
   const [books, setBooks] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const { id } = useParams();
+  const { year } = useParams();
 
-  useEffect(() => {
-    if (id) {
-      getCollection()
-        .then((res) => setBooks(res.filter((vid) => vid.id === id)))
-        .catch((err) => console.log(err))
-        .finally(() => setLoading(false));
-    } else {
-      getCollection()
-        .then((res) => setBooks(res))
-        .catch((err) => console.log(err))
-        .finally(() => setLoading(false));
-    }
-  }, [id]);
-
-  //   useEffect(() => {
-  //     const db = getFirestore();
-  //     const queryCollection = collection(db, "books");
-  //     const queryCollectionFilter = year
-  //       ? query(queryCollection, where("year", "==", year))
-  //       : queryCollection;
-  //     getDocs(queryCollectionFilter)
-  //       .then((resp) =>
-  //         setBook(resp.docs.map((prod) => ({ ...prod.data(), id: prod.id })))
-  //       )
+  // useEffect(() => {
+  //   if (id) {
+  //     getCollection()
+  //       .then((res) => setBooks(res.filter((vid) => vid.id === id)))
   //       .catch((err) => console.log(err))
-  //   }, [year]);
+  //       .finally(() => setLoading(false));
+  //   } else {
+  //     getCollection()
+  //       .then((res) => setBooks(res))
+  //       .catch((err) => console.log(err))
+  //   }
+  // }, [id]);
+  
+    useEffect(() => {
+      const db = getFirestore();
+      const queryCollection = collection(db, "books");
+      const queryCollectionFilter = year
+      ? query(queryCollection, where("year", "==", year))
+      : queryCollection;
+      getDocs(queryCollectionFilter)
+      .then((resp) =>
+      setBooks(resp.docs.map((prod) => ({ ...prod.data(), id: prod.id })))
+      )
+      .catch((err) => console.log(err))
+            .finally(() => setLoading(false));
+    }, [year]);
   //   console.log(book)
 
   return (
@@ -58,7 +58,7 @@ function BookCollectionContainer() {
         </div>
       ) : (
         <>
-          {id && (
+          {year && (
             <Link className="buttonBack" to="/libros">
               {/* <MdOutlineKeyboardArrowLeft /> */}
               <span>INICIO</span>

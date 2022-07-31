@@ -16,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/libros" element={<BookCollectionContainer />}></Route>
+            {/* <Route path="/libros/:year" element={<BookCollectionContainer />}></Route> */}
             <Route
               path="/detalle/:id"
               element={<BookDetailContainer />}
