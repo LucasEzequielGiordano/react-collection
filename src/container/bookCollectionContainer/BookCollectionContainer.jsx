@@ -1,4 +1,4 @@
-// import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import BookCollection from "../../components/bookCollection/BookCollection";
@@ -10,29 +10,27 @@ import {
   where,
 } from "firebase/firestore";
 
-// import BookCollection from "../../components/bookCollection/BookCollection";
-
 import "./BookCollectionContainer.css";
 
 function BookCollectionContainer() {
   const [books, setBooks] = useState({});
   const [loading, setLoading] = useState(true);
-
+ 
   const { filter } = useParams();
-  
-    useEffect(() => {
-      const db = getFirestore();
-      const queryCollection = collection(db, "books");
-      const queryCollectionFilter = filter
+
+  useEffect(() => {
+    const db = getFirestore();
+    const queryCollection = collection(db, "books");
+    const queryCollectionFilter = filter
       ? query(queryCollection, where("filter", "==", filter))
       : queryCollection;
-      getDocs(queryCollectionFilter)
+    getDocs(queryCollectionFilter)
       .then((resp) =>
-      setBooks(resp.docs.map((prod) => ({ ...prod.data(), id: prod.id })))
+        setBooks(resp.docs.map((prod) => ({ ...prod.data(), id: prod.id })))
       )
       .catch((err) => console.log(err))
-            .finally(() => setLoading(false));
-    }, [filter]);
+      .finally(() => setLoading(false));
+  }, [filter]);
 
   return (
     <div>
@@ -44,7 +42,7 @@ function BookCollectionContainer() {
         <>
           {filter && (
             <Link className="buttonBack" to="/libros">
-              {/* <MdOutlineKeyboardArrowLeft /> */}
+              <MdOutlineKeyboardArrowLeft />
               <span>INICIO</span>
             </Link>
           )}
