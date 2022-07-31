@@ -19,7 +19,7 @@ const NavBar = () => {
               <Link to={`/libros`}>Libros</Link>
             </li>
             <li>
-              <Link to={`/libros/70`}>1970 - 1979</Link>
+              <Link to={`/libros/70`}>1974 - 1979</Link>
             </li>
             <li>
               <Link to={`/libros/80`}>1980 - 1989</Link>
@@ -32,6 +32,9 @@ const NavBar = () => {
             </li>
             <li>
               <Link to={`/libros/10`}>2010 - 2019</Link>
+            </li>
+            <li>
+              <Link to={`/libros/20`}>2020 - 2022</Link>
             </li>
             <Link to={`/carrito`}>
               <CartIcon />

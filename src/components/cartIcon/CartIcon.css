@@ -1,8 +1,8 @@
-.cart{
-    color: #000;
-    transform: translateY(2px);
+.cart {
+  color: #000;
+  transform: translateY(2px);
 }
 
-.cart:hover{
-    color: #4e4d4b;
+.cart:hover {
+  color: #4e4d4b;
 }

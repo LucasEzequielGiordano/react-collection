@@ -1,9 +1,8 @@
 // import { useContext, useState } from "react";
 // import { CartContext } from "../../context/CartContext";
 
-// import ItemCount from "../itemCount/itemCount";
-// import InputCount from "../InputCount/InputCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../../hooks/Context";
 import Count from "../count/Count";
 import Options from "../options/Options";
 
@@ -11,16 +10,16 @@ import "./BookDetail.css";
 
 function BookDetail({ books, onAdd }) {
   const [option, setOption] = useState("Count");
-  //   const { addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   function handleInputType() {
     setOption("Options");
-}
+  }
 
-function onAdd(qty) {
-    //   addToCart({ ...product, quantity: qty });
+  function onAdd(qty) {
+    addToCart({ ...books, quantity: qty });
     handleInputType();
-}
+  }
 
   return (
     <div className="cardDetail">

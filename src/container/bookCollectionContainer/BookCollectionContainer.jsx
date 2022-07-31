@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import BookCollection from "../../components/bookCollection/BookCollection";
-// import { getCollection } from "../../helpers/Collection";
-// import { collection } from "../../helpers/Collection"
 import {
   getFirestore,
   collection,
@@ -20,26 +18,13 @@ function BookCollectionContainer() {
   const [books, setBooks] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const { year } = useParams();
-
-  // useEffect(() => {
-  //   if (id) {
-  //     getCollection()
-  //       .then((res) => setBooks(res.filter((vid) => vid.id === id)))
-  //       .catch((err) => console.log(err))
-  //       .finally(() => setLoading(false));
-  //   } else {
-  //     getCollection()
-  //       .then((res) => setBooks(res))
-  //       .catch((err) => console.log(err))
-  //   }
-  // }, [id]);
+  const { filter } = useParams();
   
     useEffect(() => {
       const db = getFirestore();
       const queryCollection = collection(db, "books");
-      const queryCollectionFilter = year
-      ? query(queryCollection, where("year", "==", year))
+      const queryCollectionFilter = filter
+      ? query(queryCollection, where("filter", "==", filter))
       : queryCollection;
       getDocs(queryCollectionFilter)
       .then((resp) =>
@@ -47,8 +32,7 @@ function BookCollectionContainer() {
       )
       .catch((err) => console.log(err))
             .finally(() => setLoading(false));
-    }, [year]);
-  //   console.log(book)
+    }, [filter]);
 
   return (
     <div>
@@ -58,7 +42,7 @@ function BookCollectionContainer() {
         </div>
       ) : (
         <>
-          {year && (
+          {filter && (
             <Link className="buttonBack" to="/libros">
               {/* <MdOutlineKeyboardArrowLeft /> */}
               <span>INICIO</span>

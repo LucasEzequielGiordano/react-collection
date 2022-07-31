@@ -4,8 +4,8 @@ import Home from "./components/home/Home";
 import BookCollectionContainer from "./container/bookCollectionContainer/BookCollectionContainer";
 import BookDetailContainer from "./container/bookDetailContainer/BookDetailContainer";
 import CartContextProvider from "./hooks/Context";
-import "./App.css";
 import Cart from "./components/cart/Cart";
+import "./App.css";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/libros" element={<BookCollectionContainer />}></Route>
-            {/* <Route path="/libros/:year" element={<BookCollectionContainer />}></Route> */}
+            <Route path="/libros/:filter" element={<BookCollectionContainer />}></Route>
             <Route
               path="/detalle/:id"
               element={<BookDetailContainer />}
