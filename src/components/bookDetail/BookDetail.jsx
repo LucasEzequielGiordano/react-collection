@@ -21,7 +21,6 @@ function onAdd(qty) {
     //   addToCart({ ...product, quantity: qty });
     handleInputType();
 }
-console.log(books.stock)
 
   return (
     <div className="cardDetail">

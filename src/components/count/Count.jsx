@@ -5,7 +5,6 @@ import "./Count.css";
 
 function Count({ stock, initial, onAdd }) {
   const [count, setCount] = useState(initial);
-  console.log(stock)
 
   const substract = () => setCount(count - 1);
   const add = () => setCount(count + 1);
