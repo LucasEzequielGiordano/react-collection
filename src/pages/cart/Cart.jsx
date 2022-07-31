@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ImHeartBroken } from "react-icons/im";
 import { CartContext } from "../../hooks/Context";
-import CartModal from "../cartModal/CartModal";
+import CartModal from "../../components/cartModal/CartModal";
 import "./Cart.css";
 
 const Cart = () => {
