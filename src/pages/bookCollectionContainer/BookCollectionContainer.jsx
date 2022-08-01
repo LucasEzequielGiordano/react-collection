@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 
 import "./BookCollectionContainer.css";
+import TopPage from "../../components/topPage/TopPage";
 
 function BookCollectionContainer() {
   const [books, setBooks] = useState({});
@@ -47,6 +48,7 @@ function BookCollectionContainer() {
             </Link>
           )}
           <BookCollection books={books} />
+          <TopPage />
         </>
       )}
     </div>
