@@ -1,6 +1,10 @@
 .containerForm {
   font-family: "Questrial", sans-serif;
   text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input {
@@ -9,7 +13,7 @@
   padding: 20px;
   letter-spacing: 1.5px;
   background-color: rgb(8, 8, 8);
-  color: white;
+  color: #fff;
 }
 
 .input:focus-visible {
@@ -17,22 +21,49 @@
 }
 
 ::placeholder {
-  color: white;
+  color: #fff;
 }
 
 .required {
   margin-top: 20px;
-  color: white;
+  color: #fff;
 }
 
 .modalButton {
   width: 40%;
   background-color: rgb(8, 8, 8);
+  color: #fff;
   border: 1px solid rgb(255, 255, 255);
   letter-spacing: 1.5px;
   transition: ease-in-out 0.4s;
 }
 
-/* form-container {
-  
-} */
+div.divBtnPurchase {
+  width: 500px;
+}
+
+.buttonBack {
+  font-family: "Questrial", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  margin-left: 25px;
+  text-decoration: none;
+  color: black;
+}
+
+.buttonBack:hover {
+  transform: translateX(-4px);
+  background-color: transparent;
+  color: black;
+}

@@ -24,13 +24,17 @@ function Count({ stock, initial, onAdd }) {
         <button
           className="buttonCounter"
           onClick={add}
-          disabled={count === stock ? true : null}
+          disabled={count >= stock ? true : null}
         >
           <FaPlus />
         </button>
       </div>
       <div className="containerButtonCart">
-        <button className="cta" onClick={() => onAdd(count)}>
+        <button
+          className="cta"
+          onClick={() => onAdd(count)}
+          disabled={stock === 0 ? true : null}
+        >
           <span className="hover-underline-animation"> AÑADIR AL CARRITO </span>
           <svg
             id="arrow-horizontal"

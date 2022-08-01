@@ -16,7 +16,7 @@ import TopPage from "../../components/topPage/TopPage";
 function BookCollectionContainer() {
   const [books, setBooks] = useState({});
   const [loading, setLoading] = useState(true);
- 
+
   const { filter } = useParams();
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function BookCollectionContainer() {
               <span>INICIO</span>
             </Link>
           )}
-          <BookCollection books={books} />
+          <BookCollection books={books.sort((a, b) => b.stock - a.stock)} />
           <TopPage />
         </>
       )}

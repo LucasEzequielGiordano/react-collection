@@ -14,16 +14,15 @@
 }
 
 .search {
-  margin-left: 30px;
+  margin-left: 48px;
 }
 
 .search > input {
-  width: 10%;
+  width: 12%;
   background-color: transparent;
   color: #000;
   border: none;
   border-bottom: 2px solid #1e1e1e;
-  /* border-radius: 50px; */
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem 1rem;

@@ -23,11 +23,11 @@ function CartContextProvider({ children }) {
       books[index].quantity = previousQuantity + item.quantity;
       let cart = [...books];
       setBooks(cart);
-      // setLocalStorageCart(cart);
+      setLocalStorageCart(cart);
     } else {
       let cart = [...books, item];
       setBooks(cart);
-      // setLocalStorageCart(cart);
+      setLocalStorageCart(cart);
     }
   }
 
@@ -35,13 +35,13 @@ function CartContextProvider({ children }) {
   function deleteProduct(id) {
     let cart = books.filter((book) => book.id !== id);
     setBooks(cart);
-    // setLocalStorageCart(cart);
+    setLocalStorageCart(cart);
   }
 
   //FUNCTION TO EMPTY CART
   function emptyCart() {
     setBooks([]);
-    // localStorage.clear();
+    localStorage.clear();
   }
 
   //TOTAL QUANTITY , THIS WILL BE SHOWN IN THE RESUME PURCHASE
@@ -129,11 +129,10 @@ function CartContextProvider({ children }) {
         const queryCollectionOrders = collection(db, "purchase");
         addDoc(queryCollectionOrders, order)
           .then(alert("Su orden esta siendo procesada!"))
-          .then(
-            (resp) =>
-              alert(`Gracias por su compra! Su códido de orden es: ${resp.id}`)
-            // localStorage.clear()
-          )
+          .then((resp) => {
+            alert(`Gracias por su compra! Su códido de orden es: ${resp.id}`);
+            localStorage.clear();
+          })
           .catch((err) => console.log(err))
           .finally(() => {
             setTimeout(() => {
@@ -146,18 +145,18 @@ function CartContextProvider({ children }) {
     }
   }
 
-  // function setLocalStorageCart(cart) {
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-  // }
+  function setLocalStorageCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
 
-  // function getLocalStorageCart() {
-  //   let localStorageCart = JSON.parse(localStorage.getItem("cart"));
-  // localStorageCart ? setBooks(localStorageCart) : setLocalStorageCart([]);
-  // }
+  function getLocalStorageCart() {
+    let localStorageCart = JSON.parse(localStorage.getItem("cart"));
+    localStorageCart ? setBooks(localStorageCart) : setLocalStorageCart([]);
+  }
 
-  // useEffect(() => {
-  //   getLocalStorageCart();
-  // }, []);
+  useEffect(() => {
+    getLocalStorageCart();
+  }, []);
 
   return (
     <div>

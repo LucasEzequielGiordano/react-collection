@@ -1,22 +1,12 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { ImHeartBroken } from "react-icons/im";
+import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../../hooks/Context";
-import CartModal from "../../components/cartModal/CartModal";
 import "./Cart.css";
+import { Button } from "react-bootstrap";
 
 const Cart = () => {
-  const [show, setShow] = useState(false);
-
-  const [fullscreen, setFullscreen] = useState(true);
-
-  const handleClose = () => setShow(false);
-
-  function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShow(true);
-  }
-  const { books, emptyCart, deleteProduct, totalPrice, totalQuantity } = useContext(CartContext);
+  const { books, emptyCart, deleteProduct, totalPrice, totalQuantity } =
+    useContext(CartContext);
 
   return books.length ? (
     <div className="containerCart">
@@ -97,13 +87,11 @@ const Cart = () => {
               </tr>
             </tbody>
           </table>
-          <CartModal
-            className="buttonEndPurchase spacing"
-            show={show}
-            handleShow={handleShow}
-            handleClose={handleClose}
-            fullscreen={fullscreen}
-          />
+          <Link to={"/formulario-de-compra"}>
+            <Button className="buttonEndPurchase" variant="primary">
+              Finalizar Compra
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
@@ -118,10 +106,6 @@ const Cart = () => {
         >
           <button className="buttonEmptyCart">IR A LA TIENDA </button>
         </NavLink>
-        <ImHeartBroken
-          className="animate__animated animate__swing animate__slower animate__infinite 	"
-          size={50}
-        />
       </div>
     </div>
   );

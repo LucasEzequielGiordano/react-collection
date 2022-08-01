@@ -39,3 +39,14 @@
 .imgCard:hover {
   transform: scale(1.1);
 }
+
+.bookDetail {
+    border: none;
+    background: rgba(0,0,0,0.8);
+    padding: 0.5rem;
+    padding-bottom: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
