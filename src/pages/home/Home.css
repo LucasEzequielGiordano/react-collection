@@ -10,7 +10,7 @@
   width: 100vw;
 }
 
-.btnHome {
+/* .btnHome {
   z-index: 101;
   position: absolute;
   top: 50%;
@@ -30,14 +30,14 @@
   font-weight: bold;
   letter-spacing: 3px;
   transition: ease-in-out 0.5s;
-}
+} */
 
-.btnHome:hover {
+/* .btnHome:hover {
   color: black;
   box-shadow: inset 500px 0 0 0 #fd3939be;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-}
+} */
 
 .item {
   background-size: cover;
@@ -89,4 +89,122 @@
   background-image: url("https://th.bing.com/th/id/OIP.-xqsVCByMi_VKEFQsFzptgHaLQ?pid=ImgDet&rs=1");
   grid-column: 5/6;
   grid-row: 2/3;
+}
+
+/* From uiverse.io by @namecho */
+button,
+button::after {
+  font-size: 18px;
+  background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 1;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
+  position: relative;
+  z-index: 101;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 50px 80px;
+  color: black;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.526);
+  font-family: "Questrial", sans-serif;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transition: ease-in-out 0.5s;
+  text-decoration: none;
+}
+
+button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "STEPHEN KING - COLLECTION";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ff013c 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+}
+
+button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
 }
