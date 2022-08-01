@@ -54,8 +54,12 @@ function BookCollection({ books }) {
         ))}
       </div>
       <div className="buttonsPages">
-        <button onClick={previousPage}>Anterior</button>
-        <button onClick={nextPage}>Siguiente</button>
+        <button className="backAndNext" onClick={previousPage}>
+          Anterior
+        </button>
+        <button className="backAndNext" onClick={nextPage}>
+          Siguiente
+        </button>
       </div>
     </>
   );

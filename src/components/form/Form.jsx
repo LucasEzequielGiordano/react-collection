@@ -5,6 +5,7 @@ import { CartContext } from "../../hooks/Context";
 import "./Form.css";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
+import CreditCard from "../creditCard/CreditCard";
 
 function Form() {
   const { purchaseOrder } = useContext(CartContext);
@@ -86,6 +87,7 @@ function Form() {
             </div>
           </div>
         </form>
+          {/* <CreditCard /> */}
       </div>
     </>
   );
