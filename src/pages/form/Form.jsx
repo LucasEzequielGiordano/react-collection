@@ -5,10 +5,11 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Form.css";
 import { ToastContainer } from "react-toastify";
+import { useRef } from "react";
 
 function Form() {
   const { purchaseOrder } = useContext(CartContext);
-
+  
   return (
     <>
       <Link className="buttonBack" to="/carrito">
@@ -25,6 +26,7 @@ function Form() {
                 type="text"
                 placeholder="Nombre*"
                 className="w-100 input"
+                name="name"
               />
             </div>
             <div className="col-75">
@@ -34,6 +36,7 @@ function Form() {
                 type="text"
                 placeholder="Apellido*"
                 className="w-100 input"
+                name="lastName"
               />
             </div>
             <div className="col-75">
@@ -52,6 +55,7 @@ function Form() {
                 type="text"
                 placeholder="Domicilio*"
                 className="w-100 input"
+                name="domicilio"
               />
             </div>
             <div className="col-75">
@@ -61,6 +65,7 @@ function Form() {
                 type="email"
                 placeholder="Email*"
                 className="w-100 input"
+                name="email"
               />
             </div>
             <div className="col-75">
@@ -80,6 +85,7 @@ function Form() {
                 }}
                 className="buttonEndPurchase"
                 variant="secondary"
+                type="submit"
               >
                 FINALIZAR COMPRA
               </Button>
