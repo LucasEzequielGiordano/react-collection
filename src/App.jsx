@@ -5,8 +5,8 @@ import BookCollectionContainer from "./pages/bookCollectionContainer/BookCollect
 import BookDetailContainer from "./pages/bookDetailContainer/BookDetailContainer";
 import CartContextProvider from "./hooks/Context";
 import Cart from "./pages/cart/Cart";
+import Form from "./pages/form/Form";
 import "./App.css";
-import Form from "./components/form/Form";
 
 function App() {
   return (

@@ -1,11 +1,10 @@
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
 import { CartContext } from "../../hooks/Context";
-
-import "./Form.css";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
-import CreditCard from "../creditCard/CreditCard";
+import "./Form.css";
+import { ToastContainer } from "react-toastify";
 
 function Form() {
   const { purchaseOrder } = useContext(CartContext);
@@ -79,19 +78,18 @@ function Form() {
                 onClick={(e) => {
                   purchaseOrder(e);
                 }}
-                className="modalButton"
+                className="buttonEndPurchase"
                 variant="secondary"
               >
                 FINALIZAR COMPRA
               </Button>
+              <ToastContainer />
             </div>
           </div>
         </form>
-          {/* <CreditCard /> */}
       </div>
     </>
   );
 }
 
 export default Form;
-// Footer;

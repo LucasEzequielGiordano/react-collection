@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../../hooks/Context";
 import "./Cart.css";
 import { Button } from "react-bootstrap";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
   const { books, emptyCart, deleteProduct, totalPrice, totalQuantity } =
@@ -88,7 +89,7 @@ const Cart = () => {
             </tbody>
           </table>
           <Link to={"/formulario-de-compra"}>
-            <Button className="buttonEndPurchase" variant="primary">
+            <Button className="btnEndPurchase" variant="primary">
               Finalizar Compra
             </Button>
           </Link>

@@ -9,7 +9,8 @@ import {
   where,
   query,
 } from "firebase/firestore";
-
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 export const CartContext = createContext([]);
 
 function CartContextProvider({ children }) {
@@ -55,6 +56,19 @@ function CartContextProvider({ children }) {
       (counter, book) => counter + book.quantity * book.price,
       0
     );
+  }
+
+  function toastify(text, time) {
+    toast(text, {
+      position: "top-center",
+      autoClose: time,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      className: "toastify",
+    });
   }
 
   async function updateStock() {
@@ -128,9 +142,12 @@ function CartContextProvider({ children }) {
         const db = getFirestore();
         const queryCollectionOrders = collection(db, "purchase");
         addDoc(queryCollectionOrders, order)
-          .then(alert("Su orden esta siendo procesada!"))
+          .then(toastify("Su orden esta siendo procesada!", 2500))
           .then((resp) => {
-            alert(`Gracias por su compra! Su códido de orden es: ${resp.id}`);
+            toastify(
+              `Gracias por su compra! Su códido de orden es: ${resp.id}`,
+              5000
+            );
             localStorage.clear();
           })
           .catch((err) => console.log(err))
@@ -141,7 +158,7 @@ function CartContextProvider({ children }) {
           });
       }
     } else {
-      alert("REVISE SUS DATOS");
+      toastify("Revise haber completado todos los campos", 2500);
     }
   }
 
@@ -169,6 +186,7 @@ function CartContextProvider({ children }) {
           totalQuantity,
           totalPrice,
           purchaseOrder,
+          toastify,
         }}
       >
         {children}

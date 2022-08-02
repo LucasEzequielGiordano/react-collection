@@ -13,7 +13,7 @@ const Home = () => {
       <div className="item item7"></div>
       <div className="item item8"></div>
         <Link to="/libros" className="btnHome">
-      <button>
+      <button className="btn-home">
           STEPHEN KING - COLLECTION
       </button>
         </Link>
