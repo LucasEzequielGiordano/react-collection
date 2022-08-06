@@ -1,24 +1,23 @@
-import { Button } from "react-bootstrap";
 import { useContext } from "react";
-import { CartContext } from "../../hooks/Context";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
-import "./Form.css";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { Button } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
-import { useRef } from "react";
+import { CartContext } from "../../hooks/UseContext";
+import "./Form.css";
 
-function Form() {
-  const { purchaseOrder } = useContext(CartContext);
-  
+const Form = () => {
+  const { _handlePurchaseOrder } = useContext(CartContext);
+
   return (
     <>
-      <Link className="buttonBack" to="/carrito">
+      <Link className="buttonBackForm" to="/carrito">
         <MdOutlineKeyboardArrowLeft />
         <span>VOLVER</span>
       </Link>
       <div className="containerForm">
-        <form action="">
-          <div className="row form-container">
+        <form>
+          <div className="row formContainer">
             <div className="col-100">
               <input
                 required
@@ -81,9 +80,9 @@ function Form() {
               <p className="required">*Obligatorio</p>
               <Button
                 onClick={(e) => {
-                  purchaseOrder(e);
+                  _handlePurchaseOrder(e);
                 }}
-                className="buttonEndPurchase"
+                className="btnEndPurchase"
                 variant="secondary"
                 type="submit"
               >
@@ -96,6 +95,6 @@ function Form() {
       </div>
     </>
   );
-}
+};
 
 export default Form;

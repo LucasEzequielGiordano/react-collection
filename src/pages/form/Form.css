@@ -30,7 +30,7 @@
   color: #fff;
 }
 
-.buttonEndPurchase {
+.btnEndPurchase {
   background-color: black;
   color: white;
   border-radius: 7px;
@@ -41,22 +41,22 @@
   letter-spacing: 1.5px;
 }
 
-.buttonEndPurchase:hover {
+.btnEndPurchase:hover {
   background-color: black;
   letter-spacing: 4px;
 }
 
-.buttonEndPurchase:focus {
+.btnEndPurchase:focus {
   background-color: rgb(0, 0, 0);
   border-color: #000000;
   box-shadow: none;
 }
 
-.buttonEndPurchase:focus-visible {
+.btnEndPurchase:focus-visible {
   display: none;
 }
 
-.buttonEndPurchase:active {
+.btnEndPurchase:active {
   border: transparent;
   border-color: black;
   box-shadow: none;
@@ -66,7 +66,7 @@ div.divBtnPurchase {
   width: 500px;
 }
 
-.buttonBack {
+.buttonBackForm {
   font-family: "Questrial", sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -86,7 +86,7 @@ div.divBtnPurchase {
   color: black;
 }
 
-.buttonBack:hover {
+.buttonBackForm:hover {
   transform: translateX(-4px);
   background-color: transparent;
   color: black;

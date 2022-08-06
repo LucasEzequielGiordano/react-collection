@@ -1,22 +1,18 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-
 import BookDetail from "../../components/bookDetail/BookDetail";
-
 import "./BookDetailContainer.css";
 
-function BookDetailContainer() {
+const BookDetailContainer = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-
   const productNotFound = useNavigate();
 
   useEffect(() => {
     const db = getFirestore();
     const dbQuery = doc(db, "books", id);
-
     getDoc(dbQuery)
       .then((resp) => {
         !resp.data() &&
@@ -42,6 +38,6 @@ function BookDetailContainer() {
       )}
     </div>
   );
-}
+};
 
 export default BookDetailContainer;

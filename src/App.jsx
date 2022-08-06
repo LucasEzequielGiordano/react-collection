@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CartContextProvider from "./hooks/UseContext";
 import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/home/Home";
 import BookCollectionContainer from "./pages/bookCollectionContainer/BookCollectionContainer";
 import BookDetailContainer from "./pages/bookDetailContainer/BookDetailContainer";
-import CartContextProvider from "./hooks/Context";
 import Cart from "./pages/cart/Cart";
 import Form from "./pages/form/Form";
 import "./App.css";

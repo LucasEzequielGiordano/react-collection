@@ -126,7 +126,7 @@ div.container-fluid {
   flex-grow: 1;
 }
 
-.product-title,
+.productTitle,
 .price,
 .sizes,
 .colors {
@@ -146,7 +146,7 @@ div.container-fluid {
   color: black;
 }
 
-.product-description {
+.productDescription {
   font-size: 15px;
   text-align: justify;
   margin-top: 30px;
@@ -155,7 +155,7 @@ div.container-fluid {
   line-height: 28px;
 }
 
-.product-title {
+.productTitle {
   margin-top: 0;
 }
 

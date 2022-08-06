@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-
 import "./Count.css";
 
-function Count({ stock, initial, onAdd }) {
+const Count = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
-  const substract = () => setCount(count - 1);
-  const add = () => setCount(count + 1);
+  const _handleSubstract = () => setCount(count - 1);
+  const _handleAdd = () => setCount(count + 1);
 
   return (
     <div className="containerCounter1">
@@ -15,7 +14,7 @@ function Count({ stock, initial, onAdd }) {
       <div className="containerCounter">
         <button
           className="buttonCounter"
-          onClick={substract}
+          onClick={_handleSubstract}
           disabled={count === initial ? true : null}
         >
           <FaMinus />
@@ -23,7 +22,7 @@ function Count({ stock, initial, onAdd }) {
         <p className="number">{count}</p>
         <button
           className="buttonCounter"
-          onClick={add}
+          onClick={_handleAdd}
           disabled={count >= stock ? true : null}
         >
           <FaPlus />

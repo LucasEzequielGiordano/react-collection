@@ -3,20 +3,18 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="containerCollection">
-      <div className="item item1"></div>
-      <div className="item item2"></div>
-      <div className="item item3"></div>
-      <div className="item item4"></div>
-      <div className="item item5"></div>
-      <div className="item item6"></div>
-      <div className="item item7"></div>
-      <div className="item item8"></div>
-        <Link to="/libros" className="btnHome">
-      <button className="btn-home">
-          STEPHEN KING - COLLECTION
-      </button>
-        </Link>
+    <div className="containerCollectionHome">
+      <div className="bgHome bgHome1"></div>
+      <div className="bgHome bgHome2"></div>
+      <div className="bgHome bgHome3"></div>
+      <div className="bgHome bgHome4"></div>
+      <div className="bgHome bgHome5"></div>
+      <div className="bgHome bgHome6"></div>
+      <div className="bgHome bgHome7"></div>
+      <div className="bgHome bgHome8"></div>
+      <Link to="/libros" className="btnHome">
+        <button className="btn-home">STEPHEN KING - COLLECTION</button>
+      </Link>
     </div>
   );
 };

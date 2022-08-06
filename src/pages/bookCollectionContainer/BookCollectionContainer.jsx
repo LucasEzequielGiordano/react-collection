@@ -1,7 +1,5 @@
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import BookCollection from "../../components/bookCollection/BookCollection";
 import {
   getFirestore,
   collection,
@@ -9,14 +7,14 @@ import {
   query,
   where,
 } from "firebase/firestore";
-
-import "./BookCollectionContainer.css";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import BookCollection from "../../components/bookCollection/BookCollection";
 import TopPage from "../../components/topPage/TopPage";
+import "./BookCollectionContainer.css";
 
-function BookCollectionContainer() {
+const BookCollectionContainer = () => {
   const [books, setBooks] = useState({});
   const [loading, setLoading] = useState(true);
-
   const { filter } = useParams();
 
   useEffect(() => {
@@ -53,6 +51,6 @@ function BookCollectionContainer() {
       )}
     </div>
   );
-}
+};
 
 export default BookCollectionContainer;

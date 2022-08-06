@@ -1,17 +1,16 @@
-import { FaAngleUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
-
+import { FaAngleUp } from "react-icons/fa";
 import "./TopPage.css";
 
-function TopPage() {
-  const [showTopBtn, setShowTopBtn] = useState(false);
+const TopPage = () => {
+  const [topBtn, setTopBtn] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 400) {
-        setShowTopBtn(true);
+        setTopBtn(true);
       } else {
-        setShowTopBtn(false);
+        setTopBtn(false);
       }
     });
   }, []);
@@ -25,11 +24,11 @@ function TopPage() {
 
   return (
     <div className="goToTop">
-      {showTopBtn && (
-        <FaAngleUp className="icon-position icon-style" onClick={goToTop} />
+      {topBtn && (
+        <FaAngleUp className="iconPosition iconStyle" onClick={goToTop} />
       )}
     </div>
   );
-}
+};
 
 export default TopPage;

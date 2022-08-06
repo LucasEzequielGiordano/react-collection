@@ -1,104 +1,102 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Questrial&display=swap");
 
-h3{
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
+h3 {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
 }
-.containerCounter1{
-    font-family: 'Questrial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    padding: 20px 0 0 0 ;
-    border-radius: 10px;
-}
-
-.containerCounter{
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    width: 70%;
-    padding: 20px;
+.containerCounter1 {
+  font-family: "Questrial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  padding: 20px 0 0 0;
+  border-radius: 10px;
 }
 
-.containerButtonCart{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    width: 70%;
+.containerCounter {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 20px;
 }
 
-.buttonCounter{
-    padding: 5px;
-    border:none;
-    font-family: 'Questrial', sans-serif;
-    font-size: 14px;
+.containerButtonCart {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
 }
 
-.number{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 100%;
-    height: 27px;
-    font-weight: bold;
-    margin-bottom: 0;
+.buttonCounter {
+  padding: 5px;
+  border: none;
+  font-family: "Questrial", sans-serif;
+  font-size: 14px;
 }
 
+.number {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: 27px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
 
 .cta {
-    border: none;
-    background: none;
-   }
-   
-   .cta span {
-    font-family: 'Questrial', sans-serif;
-    padding-bottom: 7px;
-    font-size: 12px;
-    font-weight: bold;
-    padding-right: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-   }
-   
-   .cta svg {
-    transform: translateX(-8px);
-    transition: all 0.3s ease;
-   }
-   
-   .cta:hover svg {
-    transform: translateX(0);
-   }
-   
-   .cta:active svg {
-    transform: scale(0.9);
-   }
-   
-   .hover-underline-animation {
-    position: relative;
-    color: black;
-    padding-bottom: 20px;
-   }
-   
-   .hover-underline-animation:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-   }
-   
-   .cta:hover .hover-underline-animation:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-   }
+  border: none;
+  background: none;
+}
+
+.cta span {
+  font-family: "Questrial", sans-serif;
+  padding-bottom: 7px;
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

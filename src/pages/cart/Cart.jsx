@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { CartContext } from "../../hooks/Context";
-import "./Cart.css";
 import { Button } from "react-bootstrap";
 import "react-toastify/dist/ReactToastify.css";
+import { CartContext } from "../../hooks/UseContext";
+import "./Cart.css";
 
 const Cart = () => {
-  const { books, emptyCart, deleteProduct, totalPrice, totalQuantity } =
+  const { books, _handleEmptyCart, _handleDeleteProduct, totalPrice, totalQuantity } =
     useContext(CartContext);
 
   return books.length ? (
@@ -23,19 +23,23 @@ const Cart = () => {
                 <th className="col">Eliminar</th>
               </tr>
             </thead>
-            <tbody className="tableBody">
+            <tbody className="tBody">
               {books.map((book) => (
                 <tr key={book.id}>
                   <th className="row">
-                    <img className="imgCart" src={book.img} alt="" />
+                    <img
+                      className="imgCart"
+                      src={book.img}
+                      alt="No se pudo reproducir la imagen"
+                    />
                   </th>
                   <td>{book.name}</td>
                   <td>{book.price * book.quantity}</td>
                   <td>{book.quantity}</td>
                   <td>
                     <button
-                      className="noselect deleteButton"
-                      onClick={() => deleteProduct(book.id)}
+                      className="noselect btnDelete"
+                      onClick={() => _handleDeleteProduct(book.id)}
                     >
                       <span className="text">Eliminar</span>
                       <span className="icon">
@@ -56,7 +60,7 @@ const Cart = () => {
           </table>
         </div>
         <div>
-          <button className="buttonEmptyCart spacing" onClick={emptyCart}>
+          <button className="btnEmpty spacing" onClick={_handleEmptyCart}>
             Vaciar carrito
           </button>
         </div>
@@ -89,7 +93,7 @@ const Cart = () => {
             </tbody>
           </table>
           <Link to={"/formulario-de-compra"}>
-            <Button className="btnEndPurchase" variant="primary">
+            <Button className="btnPurchase" variant="primary">
               Finalizar Compra
             </Button>
           </Link>
@@ -98,14 +102,14 @@ const Cart = () => {
     </div>
   ) : (
     <div className="containerEmptyCart1">
-      <div className="containerEmptyCart animate__animated animate__zoomIn animate__slow">
-        <h2 className="textEmptyCart ">SU CARRITO ESTA VACIO </h2>
+      <div className="containerEmptyCart">
+        <h2 className="textEmptyCart ">NO HAY LIBROS</h2>
         <NavLink
           activeclassname="currentCategory"
           className="text-white"
           to={"/libros"}
         >
-          <button className="buttonEmptyCart">IR A LA TIENDA </button>
+          <button className="btnEmpty">VOLVER A TIENDA</button>
         </NavLink>
       </div>
     </div>

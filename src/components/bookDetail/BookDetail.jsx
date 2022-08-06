@@ -1,36 +1,32 @@
-// import { useContext, useState } from "react";
-// import { CartContext } from "../../context/CartContext";
-
 import { useContext, useState } from "react";
-import { CartContext } from "../../hooks/Context";
+import { CartContext } from "../../hooks/UseContext";
 import Count from "../count/Count";
 import Options from "../options/Options";
-
 import "./BookDetail.css";
 
-function BookDetail({ books, onAdd }) {
+const BookDetail = ({ books, onAdd }) => {
   const [option, setOption] = useState("Count");
-  const { addToCart } = useContext(CartContext);
+  const { _handleAddToCart } = useContext(CartContext);
 
-  function handleInputType() {
+  const _handleOptions = () => {
     setOption("Options");
-  }
+  };
 
   function onAdd(qty) {
-    addToCart({ ...books, quantity: qty });
-    handleInputType();
+    _handleAddToCart({ ...books, quantity: qty });
+    _handleOptions();
   }
 
   return (
     <div className="cardDetail">
       <div className="cardImg">
-        <img className=" w" src={books.img} alt="First slide" />
+        <img className="w" src={books.img} alt="First slide" />
       </div>
       <div className="container-fluid">
         <div className="wrapper row">
           <div className="details col-md-12">
-            <h3 className="product-title">{books.name}</h3>
-            <p className="product-description">{books.description}</p>
+            <h3 className="productTitle">{books.name}</h3>
+            <p className="productDescription">{books.description}</p>
             <h4 className="price">
               Precio: <span>${books.price}</span>
             </h4>
@@ -39,7 +35,7 @@ function BookDetail({ books, onAdd }) {
                 stock={books.stock}
                 initial={1}
                 onAdd={onAdd}
-                handleInputType={handleInputType}
+                handleInputType={_handleOptions}
               />
             ) : (
               <Options />
@@ -49,6 +45,6 @@ function BookDetail({ books, onAdd }) {
       </div>
     </div>
   );
-}
+};
 
 export default BookDetail;

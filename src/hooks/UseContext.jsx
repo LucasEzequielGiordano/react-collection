@@ -9,56 +9,53 @@ import {
   where,
   query,
 } from "firebase/firestore";
-import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { async } from "@firebase/util";
+
 export const CartContext = createContext([]);
 
-function CartContextProvider({ children }) {
+const CartContextProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
 
-  function addToCart(item) {
+  const _handleAddToCart = (item) => {
     const index = books.findIndex((book) => book.id === item.id);
-
     if (index !== -1) {
       let previousQuantity = books[index].quantity;
       books[index].quantity = previousQuantity + item.quantity;
       let cart = [...books];
       setBooks(cart);
-      setLocalStorageCart(cart);
+      setLSCart(cart);
     } else {
       let cart = [...books, item];
       setBooks(cart);
-      setLocalStorageCart(cart);
+      setLSCart(cart);
     }
-  }
+  };
 
-  //FUNCTION TO DELETE ONE PRODUCT IN PARTICULAR
-  function deleteProduct(id) {
+  const _handleDeleteProduct = (id) => {
     let cart = books.filter((book) => book.id !== id);
     setBooks(cart);
-    setLocalStorageCart(cart);
-  }
+    setLSCart(cart);
+  };
 
-  //FUNCTION TO EMPTY CART
-  function emptyCart() {
+  const _handleEmptyCart = () => {
     setBooks([]);
     localStorage.clear();
-  }
+  };
 
-  //TOTAL QUANTITY , THIS WILL BE SHOWN IN THE RESUME PURCHASE
-  function totalQuantity() {
+  const totalQuantity = () => {
     return books.reduce((counter, book) => (counter += book.quantity), 0);
-  }
+  };
 
-  //TOTAL PRICE , THIS WILL BE SHOWN IN THE RESUME PURCHASE
-  function totalPrice() {
+  const totalPrice = () => {
     return books.reduce(
       (counter, book) => counter + book.quantity * book.price,
       0
     );
-  }
+  };
 
-  function toastify(text, time) {
+  const toastify = (text, time) => {
     toast(text, {
       position: "top-center",
       autoClose: time,
@@ -69,9 +66,9 @@ function CartContextProvider({ children }) {
       progress: undefined,
       className: "toastify",
     });
-  }
+  };
 
-  async function updateStock() {
+  const updateStock = async () => {
     const db = getFirestore();
     const queryCollectionStock = collection(db, "books");
     const queryUpdateStock = query(
@@ -95,9 +92,9 @@ function CartContextProvider({ children }) {
       )
       .catch((err) => console.log(err));
     batch.commit();
-  }
+  };
 
-  function purchaseOrder(e) {
+  const _handlePurchaseOrder = (e) => {
     const inputName = document.getElementById("formName").value;
     const inputSurname = document.getElementById("formSurname").value;
     const inputPhone = document.getElementById("formPhone").value;
@@ -160,19 +157,19 @@ function CartContextProvider({ children }) {
     } else {
       toastify("Revise haber completado todos los campos", 2500);
     }
-  }
+  };
 
-  function setLocalStorageCart(cart) {
+  const setLSCart = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
-  }
+  };
 
-  function getLocalStorageCart() {
+  const getLSCart = () => {
     let localStorageCart = JSON.parse(localStorage.getItem("cart"));
-    localStorageCart ? setBooks(localStorageCart) : setLocalStorageCart([]);
-  }
+    localStorageCart ? setBooks(localStorageCart) : setLSCart([]);
+  };
 
   useEffect(() => {
-    getLocalStorageCart();
+    getLSCart();
   }, []);
 
   return (
@@ -180,12 +177,12 @@ function CartContextProvider({ children }) {
       <CartContext.Provider
         value={{
           books,
-          addToCart,
-          emptyCart,
-          deleteProduct,
+          _handleAddToCart,
+          _handleEmptyCart,
+          _handleDeleteProduct,
           totalQuantity,
           totalPrice,
-          purchaseOrder,
+          _handlePurchaseOrder,
           toastify,
         }}
       >
@@ -193,6 +190,6 @@ function CartContextProvider({ children }) {
       </CartContext.Provider>
     </div>
   );
-}
+};
 
 export default CartContextProvider;
