@@ -53,6 +53,6 @@ const Count = ({ stock, initial, onAdd }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Count;

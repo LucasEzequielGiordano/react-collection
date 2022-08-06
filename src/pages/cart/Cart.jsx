@@ -6,8 +6,13 @@ import { CartContext } from "../../hooks/UseContext";
 import "./Cart.css";
 
 const Cart = () => {
-  const { books, _handleEmptyCart, _handleDeleteProduct, totalPrice, totalQuantity } =
-    useContext(CartContext);
+  const {
+    books,
+    _handleEmptyCart,
+    _handleDeleteProduct,
+    totalPrice,
+    totalQuantity,
+  } = useContext(CartContext);
 
   return books.length ? (
     <div className="containerCart">
